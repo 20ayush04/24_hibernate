@@ -33,29 +33,8 @@ public class RestaurantController {
 		
 		if(result.hasErrors()) {
 			
-			String validname = null;
-			String validadd = null;
-			String validcat = null;
+			model.addAttribute("result", result);
 			
-			if(result.getFieldError("name") != null) {
-				validname = result.getFieldError("name").getDefaultMessage();
-				
-			}
-			
-			if(result.getFieldError("address") != null) {
-				validadd = result.getFieldError("address").getDefaultMessage();
-				
-			}
-			
-			if(result.getFieldError("category") != null) {
-				validcat = result.getFieldError("category").getDefaultMessage();
-				
-			}
-			
-			model.addAttribute("validname",validname);
-			model.addAttribute("validadd", validadd);
-			model.addAttribute("validcat", validcat);
-
 			return "NewRestaurant";
 			 
 			 
