@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "restaurants")
@@ -13,8 +14,14 @@ public class RestaurantEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Integer restaurantId;
+	
+	@NotBlank(message = "Looks like you forgot to Enter the Name/")
 	String name;
+	
+	@NotBlank(message = "Looks like you forgot to Enter the Address/")
 	String address;
+	
+	@NotBlank(message = "Looks like you forgot to Enter the Category/")
 	String category;
 
 	public Integer getRestaurantId() {
